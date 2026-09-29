@@ -10,6 +10,7 @@ import java.util.Optional;
 @Service
 public class UsuarioService {
 
+
     private final UserRepository usuarioRepository;
     private final PasswordEncoder passwordEncoder;
 

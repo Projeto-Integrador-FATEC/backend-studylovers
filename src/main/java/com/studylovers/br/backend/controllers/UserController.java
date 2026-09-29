@@ -11,11 +11,14 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Optional;
+import com.studylovers.br.backend.service.JwtService;
 
 @RestController
 @RequestMapping("/api/users")
 @CrossOrigin(origins = "*")
 public class UserController {
+    @Autowired
+    private JwtService jwtService;
 
     @Autowired
     private UserRepository userRepository;
@@ -33,17 +36,33 @@ public class UserController {
         user.setRole("ALUNO");
         return userRepository.save(user);
     }
+        @PostMapping("/login")
+        public ResponseEntity<?> login(@RequestBody LoginDTO credenciais) {
+            User usuario = userService.autenticar(
+                    credenciais.getEmail(),
+                    credenciais.getPassword()
+            );
 
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginDTO credenciais) {
-        User usuario = userService.autenticar(credenciais.getEmail(), credenciais.getPassword());
+            if (usuario != null) {
+                String token = jwtService.gerarToken(
+                        usuario.getEmail(),
+                        usuario.getRole()
+                );
 
-        if (usuario != null) {
-            return ResponseEntity.ok(usuario);
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas");
+                return ResponseEntity.ok(
+                        java.util.Map.of(
+                                "id", usuario.getId(),
+                                "name", usuario.getName(),
+                                "email", usuario.getEmail(),
+                                "role", usuario.getRole(),
+                                "token", token
+                        )
+                );
+            }
+
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body("Credenciais inválidas");
         }
-    }
 
     @GetMapping("/get-user/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
