@@ -1,20 +1,20 @@
-INSERT INTO users (name, email, password)
-VALUES ('Daniel', 'daniel@gmail.com', '123123');
+INSERT INTO users (name, email, password, role)
+VALUES ('Daniel', 'daniel@gmail.com', 'Daniel@Admin27!', 'ADMIN');
 
-INSERT INTO users (name, email, password)
-VALUES ('Ruan', 'ruan@gmail.com', '123123');
+INSERT INTO users (name, email, password, role)
+VALUES ('Ruan', 'ruan@gmail.com', 'Ruan@Admin58!', 'ADMIN');
 
-INSERT INTO users (name, email, password)
-VALUES ('Dornelas', 'dornelas@gmail.com', '123123');
+INSERT INTO users (name, email, password, role)
+VALUES ('Dornelas', 'dornelas@gmail.com', 'Dornelas@Admin41!', 'ADMIN');
 
-INSERT INTO users (name, email, password)
-VALUES ('Gustavo', 'gustavo@gmail.com', '123123');
+INSERT INTO users (name, email, password, role)
+VALUES ('Gustavo', 'gustavo@gmail.com', 'Gustavo@Admin73!', 'ADMIN');
 
-INSERT INTO users (name, email, password)
-VALUES ('Martins', 'martins@gmail.com', '123123');
+INSERT INTO users (name, email, password, role)
+VALUES ('Alexandre', 'alexandre@gmail.com', 'Alexandre@Admin36!', 'ADMIN');
 
-INSERT INTO users (name, email, password)
-VALUES ('Felipe', 'felipe@gmail.com', '123123');
+INSERT INTO users (name, email, password, role)
+VALUES ('Felipe', 'felipe@gmail.com', 'Felipe@Admin92!', 'ADMIN');
 
 INSERT INTO categorias (id, nome) VALUES (1,'Tecnologia & Programação');
 INSERT INTO categorias (id, nome) VALUES (2,'Negócios & Empreendedorismo');
