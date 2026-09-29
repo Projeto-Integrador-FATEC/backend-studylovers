@@ -16,6 +16,9 @@ VALUES ('Alexandre', 'alexandre@gmail.com', 'Alexandre@Admin36!', 'ADMIN');
 INSERT INTO users (name, email, password, role)
 VALUES ('Felipe', 'felipe@gmail.com', 'Felipe@Admin92!', 'ADMIN');
 
+INSERT INTO users (name, email, password, role)
+VALUES ('AlunoTeste', 'aluno@gmail.com', 'Aluno@aluno2!', 'ALUNO');
+
 INSERT INTO categorias (id, nome) VALUES (1,'Tecnologia & Programação');
 INSERT INTO categorias (id, nome) VALUES (2,'Negócios & Empreendedorismo');
 INSERT INTO categorias (id, nome) VALUES (3,'Criatividade & Design');
