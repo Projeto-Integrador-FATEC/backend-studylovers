@@ -38,3 +38,9 @@ src/main/resources/static/uploads/*
 ### Upload Pasta ###
 
 /uploads/*
+
+# Arquivos e pastas locais
+target/
+.idea/
+uploads/
+.env
