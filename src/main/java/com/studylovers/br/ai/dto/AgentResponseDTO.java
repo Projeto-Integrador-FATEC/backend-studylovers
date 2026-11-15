@@ -1,4 +1,8 @@
 package com.studylovers.br.ai.dto;
 
-public record AgentResponseDTO(String resposta) {
-}
+import java.util.UUID;
+
+public record AgentResponseDTO(
+        String resposta,
+        UUID conversationId
+) {}

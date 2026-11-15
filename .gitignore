@@ -33,14 +33,13 @@ build/
 
 ### VS Code ###
 .vscode/
-src/main/resources/static/uploads/*
-
-### Upload Pasta ###
-
-/uploads/*
-
 # Arquivos e pastas locais
-target/
-.idea/
-uploads/
 .env
+.env.*
+!.env.example
+
+# Logs e diagnósticos da JVM
+*.log
+*.hprof
+*.dump
+*.jfr
